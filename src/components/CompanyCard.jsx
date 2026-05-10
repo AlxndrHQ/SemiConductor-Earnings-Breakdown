@@ -1,5 +1,6 @@
 import React from 'react';
 import { getCompany } from '../data/companies.js';
+import LiveTicker from './LiveTicker.jsx';
 
 /**
  * CompanyCard
@@ -16,6 +17,7 @@ export default function CompanyCard({ company, onNavigate }) {
   const {
     name,
     ticker,
+    etf,
     category,
     weight,
     stackPosition,
@@ -37,6 +39,10 @@ export default function CompanyCard({ company, onNavigate }) {
         <h1 className="font-display text-5xl leading-[1.05] tracking-tight md:text-6xl">
           {name}
         </h1>
+        {/* Live price — shown beneath the headline */}
+        <div className="mt-4">
+          <LiveTicker ticker={ticker} etfTicker={etf} />
+        </div>
       </header>
 
       {/* Baseline Stats */}
@@ -45,6 +51,10 @@ export default function CompanyCard({ company, onNavigate }) {
           <Dt>Ticker</Dt>
           <Dd>
             <code className="font-mono">{ticker}</code>
+          </Dd>
+          <Dt>Live Quote</Dt>
+          <Dd>
+            <LiveTicker ticker={ticker} etfTicker={etf} />
           </Dd>
           <Dt>Index Weight</Dt>
           <Dd>
