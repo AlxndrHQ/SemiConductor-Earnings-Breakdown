@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper-bg text-paper-text dark:bg-ink-bg dark:text-ink-text;
+    font-feature-settings: 'kern', 'liga', 'calt';
+  }
+  /* Subtle selection */
+  ::selection {
+    @apply bg-paper-accent/20 dark:bg-ink-accent/20;
+  }
+  /* Obsidian-style horizontal rule */
+  hr {
+    @apply border-paper-border dark:border-ink-border;
+  }
+}
+
+@layer components {
+  /* Internal-link style (Obsidian wikilink feel) */
+  .wikilink {
+    @apply text-paper-accent dark:text-ink-accent underline decoration-dotted underline-offset-4 hover:decoration-solid cursor-pointer;
+  }
+  .label {
+    @apply font-mono text-[11px] uppercase tracking-[0.14em] text-paper-muted dark:text-ink-muted;
+  }
+  .hairline {
+    @apply border-paper-border dark:border-ink-border;
+  }
+}
