@@ -1,6 +1,41 @@
-import { getCompany } from '../data/companies.js';
+import { getCompany, NEXT_EARNINGS } from '../data/companies.js';
 import LiveTicker from './LiveTicker.jsx';
 import NexusGraph from './NexusGraph.jsx';
+
+function daysUntil(dateStr) {
+  const target = new Date(dateStr);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  target.setHours(0, 0, 0, 0);
+  return Math.ceil((target - today) / (1000 * 60 * 60 * 24));
+}
+
+function EarningsDate({ id }) {
+  const dateStr = NEXT_EARNINGS[id];
+  if (!dateStr) return <span className="text-paper-muted dark:text-ink-muted">—</span>;
+
+  const days = daysUntil(dateStr);
+  const formatted = new Date(dateStr).toLocaleDateString('en-US', {
+    month: 'short', day: 'numeric', year: 'numeric',
+  });
+
+  const urgency =
+    days < 0   ? 'text-paper-muted dark:text-ink-muted line-through' :
+    days <= 14  ? 'text-amber-500 dark:text-amber-400' :
+    days <= 45  ? 'text-paper-text dark:text-ink-text' :
+                  'text-paper-muted dark:text-ink-muted';
+
+  const badge =
+    days < 0   ? null :
+    days <= 14  ? <span className="ml-2 rounded border border-amber-400/40 bg-amber-400/10 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-widest text-amber-500 dark:text-amber-400">{days}d</span> :
+                  <span className="ml-2 font-mono text-[9px] text-paper-muted dark:text-ink-muted">{days}d</span>;
+
+  return (
+    <span className={`font-mono text-sm ${urgency}`}>
+      {formatted}{badge}
+    </span>
+  );
+}
 
 /**
  * CompanyCard
@@ -62,6 +97,9 @@ export default function CompanyCard({ company, onNavigate }) {
 
           <Dt>Stack Position</Dt>
           <Dd>{stackPosition}</Dd>
+
+          <Dt>Next Earnings</Dt>
+          <Dd><EarningsDate id={company.id} /></Dd>
         </Dl>
       </Section>
 

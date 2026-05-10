@@ -1,7 +1,7 @@
 export const CATEGORIES = {
   LOGIC:     'Logic (SMH)',
   MEMORY:    'Memory (DRAM)',
-  EQUIPMENT: 'Equipment & Litho',
+  EQUIPMENT: 'Equipment & Lithography',
   SERVICES:  'AI Services & Infrastructure (AIS)',
   ENERGY:    'Energy Infrastructure (ENFR)',
 };
@@ -508,6 +508,42 @@ export const COMPANIES = [
     ir: {
       base: 'https://investors.seagate.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investors.seagate.com/financial-information/quarterly-results' }],
+    },
+  },
+
+  {
+    id: 'sndk',
+    name: 'Sandisk',
+    ticker: 'SNDK',
+    etf: 'DRAM',
+    category: CATEGORIES.MEMORY,
+    weight: { index: 'DRAM', value: '~4%' },
+    stackPosition: 'NAND Flash — Enterprise & Consumer SSD (Pure-Play)',
+    thematic:
+      'Sandisk was spun out of Western Digital in 2024 as the first pure-play NAND flash company of scale, inheriting the joint Flash Ventures manufacturing JV with Kioxia at Yokkaichi and Kitakami — the two largest NAND fab complexes on earth. As an independent company, Sandisk can pursue NAND supply discipline and enterprise SSD pricing strategy without the conflicting interests of a legacy HDD business pulling in the opposite direction. In 2026, Sandisk\'s enterprise NVMe SSD segment is the growth driver, as AI inference workloads at hyperscalers demand ultra-high-density flash for model weight caching and key-value store acceleration at the inference edge.',
+    constraints: [
+      'Post-spin capital structure — debt load from the separation limits R&D and capex relative to Samsung and Micron, who operate at 3-5x the scale',
+      'Flash Ventures JV dependency — capacity decisions at Yokkaichi and Kitakami require coordinated Kioxia alignment, slowing independent response to market signals',
+      'Enterprise SSD competition — Samsung and Micron are simultaneously ramping QLC enterprise SSDs with aggressive pricing; pure-play NAND focus means no HBM upside to offset margin pressure',
+    ],
+    nexus: [
+      { to: 'wdc',  label: 'Flash Ventures JV legacy partner' },
+      { to: 'amat', label: 'NAND cell deposition tools (Yokkaichi)' },
+      { to: 'lrcx', label: 'NAND vertical stack etch' },
+    ],
+    earnings: {
+      status: 'Meet',
+      guidance: 'Q2 2026 NAND revenue guided in line; enterprise SSD ASPs recovering; QLC 64-layer and 112-layer yield maturity improving.',
+      breakdown: [
+        'Enterprise SSD revenue $1.4B — AI inference NVMe demand absorbing premium QLC capacity above plan',
+        'Consumer NAND (retail flash, client SSD) recovering modestly as PC refresh cycle builds',
+        'Flash Ventures output discipline maintained — industry supply growth below demand growth for first time since 2022',
+        'Gross margin 29.1% — improving QoQ; path to 35%+ gross margin requires enterprise mix above 50% of revenue',
+      ],
+    },
+    ir: {
+      base: 'https://investor.sandisk.com',
+      reports: [{ label: 'Quarterly Earnings', href: 'https://investor.sandisk.com/financial-information/quarterly-results' }],
     },
   },
 
@@ -1303,3 +1339,50 @@ export const COMPANIES = [
 ];
 
 export const getCompany = (id) => COMPANIES.find((c) => c.id === id);
+
+// ─── Next Earnings Dates ─────────────────────────────────────────────────────
+// Approximate Q2/Q3 2026 report dates based on historical filing cadence.
+export const NEXT_EARNINGS = {
+  // Logic
+  nvda:  '2026-05-28', // NVIDIA FY2027 Q1
+  tsm:   '2026-07-17', // TSMC Q2 2026
+  avgo:  '2026-06-05', // Broadcom FY2026 Q2
+  intc:  '2026-07-24', // Intel Q2 2026
+  amd:   '2026-07-29', // AMD Q2 2026
+  txn:   '2026-07-22', // Texas Instruments Q2 2026
+  qcom:  '2026-07-30', // Qualcomm FY2026 Q3
+  adi:   '2026-08-19', // Analog Devices FY2026 Q3
+  mrvl:  '2026-08-26', // Marvell FY2027 Q2
+  // Memory
+  skhx:  '2026-07-24', // SK Hynix Q2 2026
+  mu:    '2026-06-25', // Micron FY2026 Q3
+  ssnlf: '2026-07-31', // Samsung Q2 2026
+  wdc:   '2026-07-30', // Western Digital FY2026 Q4
+  stx:   '2026-07-22', // Seagate FY2026 Q4
+  nanya: '2026-08-12', // Nanya Q2 2026
+  sndk:  '2026-07-23', // Sandisk Q2 2026
+  // Equipment & Lithography
+  asml:  '2026-07-16', // ASML Q2 2026
+  amat:  '2026-08-20', // Applied Materials FY2026 Q3
+  lrcx:  '2026-07-23', // Lam Research FY2026 Q4
+  klac:  '2026-08-05', // KLA FY2026 Q4
+  toely: '2026-08-06', // Tokyo Electron FY2027 Q1
+  // AIS
+  vrt:   '2026-07-23', // Vertiv Q2 2026
+  gev:   '2026-07-23', // GE Vernova Q2 2026
+  msft:  '2026-07-29', // Microsoft FY2026 Q4
+  googl: '2026-07-29', // Alphabet Q2 2026
+  amzn:  '2026-07-30', // Amazon Q2 2026
+  meta:  '2026-07-29', // Meta Q2 2026
+  pltr:  '2026-08-05', // Palantir Q2 2026
+  orcl:  '2026-06-10', // Oracle FY2026 Q4
+  snow:  '2026-08-20', // Snowflake FY2027 Q2
+  // Energy
+  enb:   '2026-08-06', // Enbridge Q2 2026
+  et:    '2026-08-05', // Energy Transfer Q2 2026
+  epd:   '2026-07-29', // Enterprise Products Q2 2026
+  wmb:   '2026-08-04', // Williams Q2 2026
+  trgp:  '2026-07-23', // Targa Resources Q2 2026
+  oke:   '2026-07-28', // ONEOK Q2 2026
+  kmi:   '2026-07-15', // Kinder Morgan Q2 2026
+};

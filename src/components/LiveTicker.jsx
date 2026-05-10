@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// Supports VITE_FINNHUB_KEY (GitHub Secrets standard) with fallback to VITE_FINNHUB_API_KEY
+// Supports VITE_FINNHUB_KEY (GitHub Secrets) with fallback to VITE_FINNHUB_API_KEY
 const FINNHUB_API_KEY =
   import.meta.env.VITE_FINNHUB_KEY ?? import.meta.env.VITE_FINNHUB_API_KEY ?? '';
 
@@ -14,6 +14,18 @@ function formatChange(d, dp) {
 }
 
 function Quote({ symbol, data }) {
+  // data may be null for unsupported tickers (international, unlisted ETFs)
+  if (!data || !data.c) {
+    return (
+      <div className="flex items-baseline gap-2 font-mono text-xs leading-none">
+        <span className="text-[9px] uppercase tracking-widest text-paper-muted dark:text-ink-muted">
+          {symbol}
+        </span>
+        <span className="text-paper-muted dark:text-ink-muted tabular-nums">---</span>
+      </div>
+    );
+  }
+
   const up = data.d >= 0;
   return (
     <div className="flex items-baseline gap-2 font-mono text-xs leading-none">
@@ -37,6 +49,24 @@ function Quote({ symbol, data }) {
 }
 
 /**
+ * Fetch a Finnhub quote. Always resolves — returns null on any failure or
+ * when the symbol is unsupported (c === 0), so callers never need to catch.
+ */
+async function fetchQuote(sym, apiKey) {
+  try {
+    const res = await fetch(
+      `https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(sym)}&token=${apiKey}`
+    );
+    if (!res.ok) return null;
+    const json = await res.json();
+    // c === 0 means unsupported symbol (international tickers on free tier, unlisted ETFs)
+    return json.c ? json : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * LiveTicker
  *
  * Props:
@@ -44,9 +74,9 @@ function Quote({ symbol, data }) {
  *   etfTicker — sector ETF ticker (e.g. "SMH", "AIS", "ENFR", "DRAM")
  */
 export default function LiveTicker({ ticker, etfTicker }) {
-  const [stockData, setStockData] = useState(null);
+  const [stockData, setStockData] = useState(undefined); // undefined = not yet fetched
   const [etfData, setEtfData] = useState(null);
-  const [status, setStatus] = useState('loading'); // loading | ok | error | unconfigured
+  const [status, setStatus] = useState('loading'); // loading | ok | unconfigured
 
   useEffect(() => {
     if (!ticker) return;
@@ -56,31 +86,18 @@ export default function LiveTicker({ ticker, etfTicker }) {
       return;
     }
 
-    const fetchQuote = async (sym) => {
-      const res = await fetch(
-        `https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(sym)}&token=${FINNHUB_API_KEY}`
-      );
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const json = await res.json();
-      // Finnhub returns c:0 for unknown symbols or outside market hours with no data
-      if (!json.c) throw new Error('no data');
-      return json;
-    };
-
     setStatus('loading');
-    setStockData(null);
+    setStockData(undefined);
     setEtfData(null);
 
     Promise.all([
-      fetchQuote(ticker),
-      etfTicker ? fetchQuote(etfTicker).catch(() => null) : Promise.resolve(null),
-    ])
-      .then(([stock, etf]) => {
-        setStockData(stock);
-        setEtfData(etf);
-        setStatus('ok');
-      })
-      .catch(() => setStatus('error'));
+      fetchQuote(ticker, FINNHUB_API_KEY),
+      etfTicker ? fetchQuote(etfTicker, FINNHUB_API_KEY) : Promise.resolve(null),
+    ]).then(([stock, etf]) => {
+      setStockData(stock); // may be null for unsupported tickers — shown as "---"
+      setEtfData(etf);
+      setStatus('ok');
+    });
   }, [ticker, etfTicker]);
 
   // ── Render states ──────────────────────────────────────────────────────────
@@ -103,18 +120,10 @@ export default function LiveTicker({ ticker, etfTicker }) {
     );
   }
 
-  if (status === 'error' || !stockData) {
-    return (
-      <span className="font-mono text-[9px] uppercase tracking-widest text-red-400 dark:text-red-500">
-        QUOTE UNAVAILABLE
-      </span>
-    );
-  }
-
   return (
     <div className="inline-flex flex-col gap-1 rounded border border-paper-muted/20 dark:border-ink-muted/20 bg-paper-bg dark:bg-ink-bg px-3 py-1.5">
       <Quote symbol={ticker} data={stockData} />
-      {etfTicker && etfData && <Quote symbol={etfTicker} data={etfData} />}
+      {etfTicker && <Quote symbol={etfTicker} data={etfData} />}
     </div>
   );
 }
