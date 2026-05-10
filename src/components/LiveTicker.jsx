@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const FINNHUB_API_KEY = import.meta.env.VITE_FINNHUB_API_KEY;
+// Supports VITE_FINNHUB_KEY (GitHub Secrets standard) with fallback to VITE_FINNHUB_API_KEY
+const FINNHUB_API_KEY =
+  import.meta.env.VITE_FINNHUB_KEY ?? import.meta.env.VITE_FINNHUB_API_KEY ?? '';
 
 function formatPrice(n) {
   return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
