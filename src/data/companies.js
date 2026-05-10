@@ -4,6 +4,7 @@ export const CATEGORIES = {
   EQUIPMENT: 'Equipment & Lithography',
   SERVICES:  'AI Services & Infrastructure (AIS)',
   ENERGY:    'Energy Infrastructure (ENFR)',
+  PHOTONICS: 'Optical & Photonics',
 };
 
 export const COMPANIES = [
@@ -1336,6 +1337,154 @@ export const COMPANIES = [
       reports: [{ label: 'Earnings Releases', href: 'https://ir.kindermorgan.com/financial-information/quarterly-earnings' }],
     },
   },
+  // ─────────────────────────────────────────────────────────────────────────
+  // OPTICAL & PHOTONICS
+  // Note: No dedicated pure-play photonics ETF exists; SMH is the closest
+  // proxy as these companies sit in the semiconductor supply chain.
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 'cohr',
+    name: 'Coherent Corp',
+    ticker: 'COHR',
+    etf: 'SMH',
+    category: CATEGORIES.PHOTONICS,
+    weight: { index: 'SMH (proxy)', value: '~1%' },
+    stackPosition: 'Optical Components — 800G/1.6T Transceivers & Laser Sources',
+    thematic:
+      'Coherent is the dominant supplier of the optical transceivers that physically connect GPU clusters inside AI data centers — every NVLink and InfiniBand cable in a Blackwell NVL72 rack terminates in a Coherent active optical cable or pluggable transceiver. The 800G transceiver cycle is the most compressed upgrade cycle in optical history, driven by the insatiable bandwidth demands of AI training clusters scaling from thousands to hundreds of thousands of GPUs, and Coherent\'s indium phosphide (InP) laser manufacturing capacity is the binding constraint on how fast the industry can upgrade. In 2026, Coherent is the picks-and-shovels play on AI interconnect that most equity investors have not yet fully priced into the stock.',
+    constraints: [
+      'InP laser epitaxy capacity — growing indium phosphide substrates for 800G and 1.6T laser sources requires specialized MOCVD reactors with 18-month lead times',
+      'Co-packaged optics (CPO) transition — the industry shift from pluggable to co-packaged optics will eventually disrupt Coherent\'s pluggable transceiver revenue before CPO ASPs can compensate',
+      'Integration complexity — the II-VI and Coherent merger combined two large, complex manufacturing organizations; ERP consolidation and fab rationalization are multi-year execution risks',
+    ],
+    nexus: [
+      { to: 'nvda', label: '800G active optical cables for NVLink' },
+      { to: 'mrvl', label: 'DSP + transceiver co-design for 1.6T' },
+      { to: 'fn',   label: 'contract manufacturing for transceiver assembly' },
+    ],
+    earnings: {
+      status: 'Beat',
+      guidance: 'FY2026 Q4 datacom revenue guided +50% YoY; 800G transceiver backlog extends into Q1 2027; 1.6T sampling to hyperscalers.',
+      breakdown: [
+        'Datacom revenue $820M — 800G transceiver shipments to AI cluster deployments driving record quarter',
+        'Telecom segment stable; 5G infrastructure investment providing base demand floor',
+        '1.6T transceiver qualification at NVIDIA and hyperscalers on track for H2 2026 production',
+        'Gross margin 42.1% — transceiver mix improvement; InP substrate yield enhancing cost structure',
+      ],
+    },
+    ir: {
+      base: 'https://www.coherent.com/investors',
+      reports: [{ label: 'Quarterly Earnings', href: 'https://www.coherent.com/investors/financial-information' }],
+    },
+  },
+
+  {
+    id: 'lite',
+    name: 'Lumentum Holdings',
+    ticker: 'LITE',
+    etf: 'SMH',
+    category: CATEGORIES.PHOTONICS,
+    weight: { index: 'SMH (proxy)', value: '~0.5%' },
+    stackPosition: 'Optical Components — InP Lasers, ROADMs & 3D Sensing',
+    thematic:
+      'Lumentum is a pure-play photonics company with leadership positions in indium phosphide lasers for datacom transceivers and reconfigurable optical add-drop multiplexers (ROADMs) for long-haul network infrastructure — both of which are experiencing simultaneous demand acceleration from AI cluster build-out and hyperscaler backbone network upgrades. The company\'s 3D sensing laser business (used in Apple Face ID and Android equivalents) provides a consumer revenue floor that is now being supplemented by the rapidly growing datacom laser segment. In 2026, Lumentum\'s datacom laser chips are shipping into 800G transceivers made by Coherent, Fabrinet, and others, making it a critical upstream supplier in the optical interconnect stack.',
+    constraints: [
+      'Customer concentration — Apple 3D sensing represents a meaningful share of revenue; any iPhone volume miss or in-house laser development creates downside risk',
+      'ROADM pricing pressure — Chinese competitors are pricing aggressively into the ROADM market, compressing Lumentum\'s long-haul telecom margins',
+      'InP capacity investment — scaling laser chip output for 800G/1.6T demand requires significant capital in specialized epitaxy and fab tooling',
+    ],
+    nexus: [
+      { to: 'cohr', label: 'laser chip supply for transceivers' },
+      { to: 'fn',   label: 'transceiver assembly manufacturing' },
+      { to: 'amzn', label: 'AWS optical network components' },
+    ],
+    earnings: {
+      status: 'Beat',
+      guidance: 'FY2026 Q4 datacom laser revenue guided up 60% YoY; ROADM telecom segment recovering; 3D sensing in line with iPhone cycle.',
+      breakdown: [
+        'Datacom laser chip revenue $280M — 800G laser demand from transceiver manufacturers absorbing all available InP capacity',
+        'Telecom (ROADM) recovery — North American carrier spending resuming after prolonged pause',
+        '3D sensing revenue stable — iPhone 17 cycle in line; design win pipeline for Android expanding',
+        'Gross margin 49.2% — datacom laser mix driving improvement; operating leverage building',
+      ],
+    },
+    ir: {
+      base: 'https://investor.lumentum.com',
+      reports: [{ label: 'Quarterly Results', href: 'https://investor.lumentum.com/financial-information/quarterly-results' }],
+    },
+  },
+
+  {
+    id: 'fn',
+    name: 'Fabrinet',
+    ticker: 'FN',
+    etf: 'SMH',
+    category: CATEGORIES.PHOTONICS,
+    weight: { index: 'SMH (proxy)', value: '~0.5%' },
+    stackPosition: 'Optical EMS — Contract Manufacturing for Transceivers & Laser Modules',
+    thematic:
+      'Fabrinet is the TSMC of the optical world — a pure-play contract manufacturer that assembles the transceivers, laser modules, and optical subsystems that its customers (Coherent, Lumentum, Ciena, Cisco) design but cannot efficiently manufacture at scale. Operating out of its Chonburi, Thailand campus, Fabrinet combines precision optical alignment, hermetic sealing, and RF assembly capabilities that are extraordinarily difficult to replicate, creating a manufacturing moat as defensible as any fab in the semiconductor industry. In 2026, every 800G transceiver surge at the design houses flows directly into Fabrinet\'s production lines, making it one of the cleanest pure-play beneficiaries of the AI cluster interconnect build-out.',
+    constraints: [
+      'Thailand geographic concentration — the Chonburi campus is the single point of manufacturing for many customers; flood, political, or supply chain disruption risk is structurally elevated',
+      'Customer revenue concentration — top-3 customers represent >60% of revenue; any program cancellation or in-house manufacturing move has outsized impact',
+      'Optical alignment yield — sub-micron precision alignment of laser-to-fiber coupling is the rate-limiting step in transceiver assembly; yield improvements are incremental and hard-won',
+    ],
+    nexus: [
+      { to: 'cohr', label: 'contract assembly for COHR transceivers' },
+      { to: 'lite', label: 'laser module assembly for LITE' },
+      { to: 'nvda', label: 'end-market: AI cluster interconnect' },
+    ],
+    earnings: {
+      status: 'Beat',
+      guidance: 'FY2026 Q4 revenue guided $820-840M — 800G transceiver volume driving record backlog; capacity expansion at Chonburi Phase 2 funded.',
+      breakdown: [
+        'Revenue $808M — above guidance; 800G transceiver assembly volumes at record throughput',
+        'Datacom segment now 72% of revenue — AI cluster build-out demand driving mix shift from telecom',
+        'New Chonburi building commissioned — 300K sq ft of additional clean room capacity online',
+        'Gross margin 12.1% — EMS model; operating leverage delivering; ROIC above 25%',
+      ],
+    },
+    ir: {
+      base: 'https://investor.fabrinet.com',
+      reports: [{ label: 'Quarterly Results', href: 'https://investor.fabrinet.com/financial-information/quarterly-results' }],
+    },
+  },
+
+  {
+    id: 'viav',
+    name: 'Viavi Solutions',
+    ticker: 'VIAV',
+    etf: 'SMH',
+    category: CATEGORIES.PHOTONICS,
+    weight: { index: 'SMH (proxy)', value: '~0.3%' },
+    stackPosition: 'Optical Test & Network Intelligence',
+    thematic:
+      'Viavi Solutions makes the instruments and software that validate, monitor, and troubleshoot optical networks — as AI data centers deploy 800G and eventually 1.6T optical interconnects, the complexity of qualifying and maintaining those networks drives demand for Viavi\'s optical spectrum analyzers, OTDR instruments, and network test platforms. The company\'s OSP (Optical Security and Performance Products) segment, which makes the optically variable anti-counterfeiting pigments used in banknotes and government documents, provides a stable, high-margin cash flow stream that funds R&D in the more cyclical network test business. In 2026, Viavi is benefiting from hyperscaler network infrastructure validation spend and the 5G network testing cycle as carriers bring 5G mid-band capacity online.',
+    constraints: [
+      'Network test spending cyclicality — telecom carrier capex cycles directly gate Viavi\'s NSE segment; any carrier spending pause reduces test instrument orders',
+      'OSP concentration — the anti-counterfeiting pigment business is highly profitable but dependent on government currency printing programs that are long-cycle and politically sensitive',
+      'Competition from Spirent and Keysight — large, well-funded competitors in network test limit pricing power and require continuous R&D investment to maintain differentiation',
+    ],
+    nexus: [
+      { to: 'cohr', label: 'optical network validation tools' },
+      { to: 'asml', label: 'optical metrology and photomask inspection' },
+    ],
+    earnings: {
+      status: 'Meet',
+      guidance: 'FY2026 Q4 NSE revenue guided up 8% YoY; OSP segment in line; hyperscaler lab test spending offsetting carrier CapEx pause.',
+      breakdown: [
+        'Network & Service Enablement (NSE) $215M — datacenter lab test spending outperforming; carrier field test recovering',
+        'Optical Security & Performance (OSP) $92M — in line; currency program timing within expectations',
+        'Fiber characterization tools demand growing with 800G network deployments at hyperscalers',
+        'Operating margin 14.2% — improving YoY; restructuring charges behind us; leverage building',
+      ],
+    },
+    ir: {
+      base: 'https://investor.viavisolutions.com',
+      reports: [{ label: 'Quarterly Results', href: 'https://investor.viavisolutions.com/financial-information/quarterly-results' }],
+    },
+  },
+
 ];
 
 export const getCompany = (id) => COMPANIES.find((c) => c.id === id);
@@ -1385,4 +1534,9 @@ export const NEXT_EARNINGS = {
   trgp:  '2026-07-23', // Targa Resources Q2 2026
   oke:   '2026-07-28', // ONEOK Q2 2026
   kmi:   '2026-07-15', // Kinder Morgan Q2 2026
+  // Photonics (all have June fiscal year-end)
+  cohr:  '2026-08-12', // Coherent FY2026 Q4
+  lite:  '2026-08-19', // Lumentum FY2026 Q4
+  fn:    '2026-08-17', // Fabrinet FY2026 Q4
+  viav:  '2026-08-06', // Viavi Solutions FY2026 Q4
 };

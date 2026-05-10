@@ -76,7 +76,7 @@ export default function App() {
           </button>
 
           <div className="label flex-1">
-            {company ? `c / ${company.id}` : 'index'}
+            {company ? `${company.ticker} · ${company.name}` : 'index'}
           </div>
 
           <ThemeToggle />
