@@ -47,6 +47,12 @@ export const COMPANIES = [
       base: 'https://investor.nvidia.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investor.nvidia.com/financial-info/quarterly-results/default.aspx' }],
     },
+    tacticalEntry: {
+      idealEntry: '$105–$115 — 21-day EMA reclaim on volume, or any CoWoS-L supply constraint resolution announcement creating a re-rate entry point',
+      leapStructure: 'Jan 2027 $120C or Jan 2028 $130C — 18-24 month duration to capture Blackwell Ultra and Rubin ramp; size 2–3% of portfolio, target delta 0.60+',
+      catalyst: 'May 20 Q1 FY2027 earnings — Blackwell Ultra revenue mix; HBM4 qualification update from SK Hynix; Q2 guidance vs. Street $45B+',
+      thesis: 'NVIDIA\'s rack-scale integration moat compounds with each generation — NVLink, networking, and CUDA all tied together. Blackwell Ultra and Rubin represent multi-year ASP expansion with no credible near-term substitute. Core high-conviction hold through the 2027 Rubin ramp.',
+    },
   },
 
   {
@@ -84,6 +90,12 @@ export const COMPANIES = [
       base: 'https://investor.tsmc.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investor.tsmc.com/english/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$175–$190 ADR — pullback to 50-day SMA on Taiwan tension headlines; or post-Q2 earnings confirmation of CoWoS-L Phase 2 commissioning',
+      leapStructure: 'Jan 2027 $195C — 12-month duration; N2 yield de-risks by Q3 2026 earnings; size 1.5–2%, delta 0.55+',
+      catalyst: 'July 17 Q2 2026 earnings — CoWoS-L Phase 2 capacity status; N2 yield milestones; AI wafer revenue as % of logic mix',
+      thesis: 'TSMC is the single non-substitutable node in the AI hardware supply chain. No credible alternative exists for leading-edge AI chip fabrication at scale. CoWoS advanced packaging is a compounding moat on top of its lithography dominance.',
+    },
   },
 
   {
@@ -118,6 +130,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investors.broadcom.com',
       reports: [{ label: 'Quarterly Earnings', href: 'https://investors.broadcom.com/financial-information/financial-results' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$225–$245 — pullback to 50-day SMA or any hyperscaler custom ASIC program delay creating a temporary sentiment gap',
+      leapStructure: 'Jan 2027 $250C — 12-month duration captures Google/Meta XPU Gen 2 production ramp; size 1.5%, delta 0.55+',
+      catalyst: 'June 5 FY2026 Q2 earnings — AI semiconductor quarterly revenue vs. $65B FY guide; custom ASIC tape-out pipeline update',
+      thesis: 'Broadcom owns the custom ASIC wave and the networking layer simultaneously — hyperscalers pay AVGO whether they choose NVIDIA or their own XPU. AI revenue run-rate tracking to $60B+ by FY2027. Royalty-like economics on the largest capex cycle in tech history.',
     },
   },
 
@@ -155,6 +173,12 @@ export const COMPANIES = [
       base: 'https://www.intc.com/investor-relations',
       reports: [{ label: 'Earnings Releases', href: 'https://www.intc.com/investor-relations/earnings/quarterly-results/default.aspx' }],
     },
+    tacticalEntry: {
+      idealEntry: '$22–$26 — deep value / turnaround entry only; position sizing should be small given execution risk; wait for 18A yield confirmation before adding',
+      leapStructure: 'Jan 2027 $28C (OTM lottery) — speculative only; small allocation 0.5% max; captures 18A external customer announcement upside',
+      catalyst: 'July 24 Q2 2026 earnings — IFS 18A external customer yield certification timeline; Gaudi 3 adoption update; cost reduction milestones',
+      thesis: 'Intel is a turnaround option with significant execution risk. The thesis requires 18A yield to reach external customer certification — without that, IFS is a money-losing distraction. Position sizing should reflect the binary nature of the catalyst.',
+    },
   },
 
   {
@@ -191,6 +215,12 @@ export const COMPANIES = [
       base: 'https://ir.amd.com',
       reports: [{ label: 'Quarterly Results', href: 'https://ir.amd.com/financial-information/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$130–$145 — ROCm hyperscaler qualification milestone or MI350 production volume confirmation; 21-day EMA reclaim on volume',
+      leapStructure: 'Jan 2027 $155C — 12-month duration capturing MI350 N3 ramp catalyst; size 1–1.5%, target delta 0.55',
+      catalyst: 'July 29 Q2 2026 earnings — data center GPU revenue vs. $4.5B guide; MI350 production ramp timing; ROCm adoption announcements',
+      thesis: 'AMD is the most credible NVIDIA alternative with production silicon shipping at scale. EPYC CPUs fund the GPU R&D cycle. MI350 on N3 with HBM4 narrows the performance gap — the ROCm software barrier is the only gating factor remaining.',
+    },
   },
 
   {
@@ -225,6 +255,12 @@ export const COMPANIES = [
       base: 'https://investor.ti.com',
       reports: [{ label: 'Earnings Release', href: 'https://investor.ti.com/financial-information/financial-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$165–$180 — industrial PMI inflection above 50 or channel inventory draw confirmation; accumulate in weakness as cycle troughs',
+      leapStructure: 'Jan 2027 $185C — 12-month duration; industrial recovery in H2 2026 is the swing factor; size 1%, delta 0.50',
+      catalyst: 'July 22 Q2 2026 earnings — industrial revenue trend; channel inventory days reduction; new 300mm fab utilization rate improvement',
+      thesis: 'TXN is the highest-quality analog franchise at a cyclical trough. When industrial and auto inventory normalizes in H2 2026, operating leverage from the 300mm fab base is extreme. The contrarian accumulation window is now, before the recovery is visible in reported numbers.',
+    },
   },
 
   {
@@ -258,6 +294,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investor.qualcomm.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investor.qualcomm.com/financial-information/quarterly-results' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$145–$160 — Apple modem transition FUD creating entry; or Snapdragon X Elite market share data confirming PC ramp ahead of plan',
+      leapStructure: 'Jan 2027 $170C — captures automotive ADAS ramp catalyst and PC attach confirmation; size 1%, delta 0.50',
+      catalyst: 'July 30 FY2026 Q3 earnings — automotive revenue growth rate vs. $45B design win pipeline; Snapdragon X Elite PC attach data; Apple modem update',
+      thesis: 'QCOM is a multiple re-rating story if automotive and PC diversification reach critical mass before any Apple modem attrition. The $45B automotive lifetime design win pipeline is real and begins generating revenue in 2027-2028 production vehicles. Current valuation does not fully price this.',
     },
   },
 
@@ -294,6 +336,12 @@ export const COMPANIES = [
       base: 'https://investor.analog.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investor.analog.com/financial-information/quarterly-earnings' }],
     },
+    tacticalEntry: {
+      idealEntry: '$195–$210 — industrial PMI turning positive or distributor sell-through data showing inventory days declining; buy in stages during the trough',
+      leapStructure: 'Jan 2027 $220C — 12-month duration; industrial recovery in H2 2026 is the primary swing catalyst; size 1%, delta 0.50',
+      catalyst: 'August 19 FY2026 Q3 earnings — industrial revenue trend inflection; communications segment stabilization; distributor channel inventory days',
+      thesis: 'ADI is the highest-quality analog franchise in the deepest part of the inventory correction cycle. Outsourced manufacturing means rapid margin expansion on recovery. When industrial and telecom spending normalizes, ADI\'s operating leverage is among the highest in analog semis.',
+    },
   },
 
   {
@@ -329,6 +377,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investor.marvell.com',
       reports: [{ label: 'Quarterly Earnings', href: 'https://investor.marvell.com/financial-information/quarterly-results' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$70–$82 — any tape-out delay headline creating temporary weakness; pullback to 50-day SMA with AI ASIC pipeline intact',
+      leapStructure: 'Jan 2027 $90C — 12-month duration; Amazon Trainium2 + Google Gen 2 ASIC production ramp is the delta driver; size 1.5%, delta 0.55',
+      catalyst: 'August 26 FY2027 Q2 earnings — custom AI ASIC revenue vs. $8B+ FY guide; optical DSP 1.6T qualification progress; Amazon Trainium3 tape-out confirmation',
+      thesis: 'Marvell is the royalty play on hyperscaler custom silicon — sole-sourced, multi-year, compounding volume. The ASIC design cycle creates 18-24 month lead visibility. The optical DSP franchise on top is an AI interconnect option that most MRVL models undervalue.',
     },
   },
 
@@ -369,6 +423,12 @@ export const COMPANIES = [
       base: 'https://www.skhynix.com/eng/ir',
       reports: [{ label: 'Quarterly Earnings', href: 'https://www.skhynix.com/eng/ir/financialInformation.do' }],
     },
+    tacticalEntry: {
+      idealEntry: 'KRW 180,000–200,000 (OTC: HXSCF ~$13–$15) — HBM4 yield concern headline creating a buy-the-news opportunity before NVIDIA qualification',
+      leapStructure: 'OTC shares or Korean ADR; no liquid US LEAPs — accumulate spot position; size 1–1.5% as long-only equity given options illiquidity',
+      catalyst: 'July 24 Q2 2026 earnings — HBM4 12-Hi yield progress; NVIDIA qualification timeline; HBM3E pricing ASP update for H2 2026',
+      thesis: 'SK Hynix is structurally sold out of HBM through end-2026. HBM4 qualification at NVIDIA is the next re-rate event. The TSV manufacturing moat takes years to replicate — Micron is 2-3 quarters behind. Long-term supply agreements provide exceptional revenue visibility.',
+    },
   },
 
   {
@@ -404,6 +464,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investors.micron.com',
       reports: [{ label: 'Earnings Releases', href: 'https://investors.micron.com/financial-information/quarterly-results' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$105–$120 — NAND pricing concern or HBM3E yield noise creating entry; accumulate on any 10%+ correction with HBM thesis intact',
+      leapStructure: 'Jan 2027 $125C — 12-month duration; HBM4 NVIDIA qualification in Q3 is the delta-driving catalyst; size 1.5%, delta 0.55',
+      catalyst: 'June 25 FY2026 Q3 earnings — HBM revenue run-rate vs. $3.5B FY guide; HBM4 sampling to NVIDIA update; NAND pricing trajectory',
+      thesis: 'Micron is the US-based HBM second source in the most supply-constrained memory market in history. HBM4 qualification at NVIDIA transforms MU from a commodity memory company to a premium AI memory supplier. Idaho manufacturing provides geopolitical supply chain diversification that hyperscalers demand.',
     },
   },
 
@@ -441,6 +507,12 @@ export const COMPANIES = [
       base: 'https://www.samsung.com/us/investor-relations',
       reports: [{ label: 'Earnings Releases', href: 'https://www.samsung.com/global/ir/financial-information/quarterly-earnings/' }],
     },
+    tacticalEntry: {
+      idealEntry: 'KRW 60,000–70,000 (OTC: SSNLF ~$28–$34) — HBM4 NVIDIA qualification announcement is the primary re-rate trigger; accumulate ahead of Q4 2026 catalyst',
+      leapStructure: 'OTC shares only (SSNLF); no US-listed LEAPs — long-only equity accumulation; size 0.5–1% given OTC liquidity and qualification binary risk',
+      catalyst: 'July 31 Q2 2026 earnings — HBM3E yield progress update; SF3 (3nm GAA) external customer wins; NAND pricing recovery trajectory',
+      thesis: 'Samsung is the contrarian recovery play in memory — if HBM4 NVIDIA qualification succeeds in Q4 2026, the stock re-rates sharply from depressed levels. SF3 foundry credibility restoration is a second option on an already undervalued conglomerate. The risk is qualification delay extending the discount.',
+    },
   },
 
   {
@@ -474,6 +546,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investor.wdc.com',
       reports: [{ label: 'Earnings Releases', href: 'https://investor.wdc.com/financial-information/annual-reports-and-proxy' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$58–$68 — NAND pricing recovery data or enterprise SSD hyperscaler contract announcement; accumulate near 52-week low range',
+      leapStructure: 'Jan 2027 $70C — 12-month duration; NAND price recovery in H2 2026 is the swing factor; size 0.75%, delta 0.50',
+      catalyst: 'July 30 FY2026 Q4 earnings — enterprise SSD revenue growth vs. hyperscaler AI inference demand; NAND pricing trajectory; Flash Ventures output discipline',
+      thesis: 'WDC provides dual AI exposure: enterprise NVMe SSDs for AI inference and nearline HDDs for AI training datasets. The NAND recovery combined with enterprise SSD demand acceleration creates a margin expansion setup. Valuation is undemanding at trough NAND margins.',
     },
   },
 
@@ -509,6 +587,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investors.seagate.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investors.seagate.com/financial-information/quarterly-results' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$100–$115 — hyperscaler nearline HDD order moderation headline creating entry; HAMR throughput bottleneck is the bull thesis — not demand',
+      leapStructure: 'Jan 2027 $120C — 12-month duration; 40TB HAMR production ramp is the next ASP catalyst; size 1%, delta 0.55',
+      catalyst: 'Next quarterly earnings — nearline HDD exabyte shipment growth; 40TB drive production ramp update; HAMR assembly throughput vs. demand',
+      thesis: 'Seagate owns the only cost-effective medium for AI training dataset storage at exabyte scale. HAMR technology gives STX higher areal density than WDC at the 32-40TB tier. Nearline HDD demand from hyperscalers is at a multi-decade high and manufacturing throughput — not demand — is the ceiling.',
     },
   },
 
@@ -546,6 +630,12 @@ export const COMPANIES = [
       base: 'https://investor.sandisk.com',
       reports: [{ label: 'Quarterly Earnings', href: 'https://investor.sandisk.com/financial-information/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$22–$28 — NAND pricing stabilization or enterprise SSD market share data showing Flash Ventures supply discipline paying off',
+      leapStructure: 'Jan 2027 $30C (if listed) — speculative LEAP; pure-play NAND recovery + enterprise SSD mix shift; size 0.5%, delta 0.45',
+      catalyst: 'Q2 2026 earnings — enterprise SSD revenue vs. consumer NAND mix; Flash Ventures JV output discipline update; gross margin trajectory toward 35%',
+      thesis: 'As a pure-play NAND spin-off, SNDK can optimize supply discipline without HDD business conflicts. Enterprise NVMe SSD exposure to AI inference demand is the growth engine. If NAND pricing recovers in H2 2026, SNDK has the highest earnings leverage per point of ASP improvement.',
+    },
   },
 
   {
@@ -580,6 +670,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://www.nanya.com/en/Invest',
       reports: [{ label: 'Financial Reports', href: 'https://www.nanya.com/en/Invest/FinancialReport' }],
+    },
+    tacticalEntry: {
+      idealEntry: 'TWD 38–48 (Taiwan-listed only) — very small speculative position; pure commodity DRAM recovery play with no HBM upside; trough valuation near book value',
+      leapStructure: 'Taiwan-listed shares only; no US-tradeable options — long-only spot equity; size 0.25% max given limited AI upside and scale disadvantage',
+      catalyst: 'Q2 2026 earnings — commodity DDR4/DDR5 pricing trend; capex discipline update; any announcements on HBM roadmap development',
+      thesis: 'Nanya is a pure commodity DRAM cycle play with no AI premium. The thesis is simple: trough valuation near book value with a DRAM upcycle catalyst in H2 2026. Small position only — the absence of HBM limits upside significantly vs. Hynix or Micron.',
     },
   },
 
@@ -620,6 +716,12 @@ export const COMPANIES = [
       base: 'https://www.asml.com/en/investors',
       reports: [{ label: 'Quarterly Results', href: 'https://www.asml.com/en/investors/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$700–$760 ADR — any China export restriction escalation headline creating a gap-down entry; or High-NA EXE:5000 shipment delay creating short-term fear',
+      leapStructure: 'Jan 2027 $790C — 12-month duration; High-NA volume ramp at TSMC N2 and Samsung SF2 is the next structural re-rate; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — High-NA EXE:5000 cumulative shipments; backlog composition; TSMC N2 readiness update; China DUV restriction impact quantification',
+      thesis: 'ASML is the most extreme monopoly in the global supply chain — zero substitutes for EUV or High-NA EUV. Every advanced AI chip in 2026 was patterned with ASML tools. The High-NA transition creates a second ASP step-function above the already-monopoly EUV franchise.',
+    },
   },
 
   {
@@ -655,6 +757,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://ir.appliedmaterials.com',
       reports: [{ label: 'Earnings Releases', href: 'https://ir.appliedmaterials.com/financial-information/quarterly-earnings' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$165–$180 — any WFE spend guidance cut from TSMC or Samsung creating a broad equipment sector selloff; broadest equipment exposure at the best entry',
+      leapStructure: 'Jan 2027 $185C — 12-month duration; GAA tooling intensity increase at TSMC N2 is the secular driver; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — GAA epi and CVD revenue growth vs. guidance; advanced packaging (ICAPS) order growth; China restriction quantification',
+      thesis: 'AMAT has the broadest process tool coverage of any equipment company — CVD, PVD, CMP, implant, etch. GAA transistor architecture structurally increases tool steps per wafer at every new node. Advanced packaging exposure adds a second AI-driven secular tailwind.',
     },
   },
 
@@ -693,6 +801,12 @@ export const COMPANIES = [
       base: 'https://ir.lamresearch.com',
       reports: [{ label: 'Quarterly Earnings', href: 'https://ir.lamresearch.com/financial-information/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$75–$85 — NAND capex pause news creating broad equipment sector dip; HBM TSV etch demand is structurally decoupled from NAND cycle',
+      leapStructure: 'Jan 2027 $90C — 12-month duration; HBM4 12-Hi TSV etch revenue ramp is the primary catalyst; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — HBM TSV etch vs. total systems revenue mix; NAND deposition order recovery; customer support (CSBG) installed base growth',
+      thesis: 'LRCX owns HBM TSV etching — the single most specialized process step in HBM manufacturing. As stacks go from 8-Hi to 12-Hi to 16-Hi, aspect ratio increases and only LRCX tools can deliver at volume. NAND recovery adds a second independent engine for 2H 2026.',
+    },
   },
 
   {
@@ -729,6 +843,12 @@ export const COMPANIES = [
       base: 'https://ir.kla.com',
       reports: [{ label: 'Quarterly Results', href: 'https://ir.kla.com/financial-information/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$650–$710 — any broad equipment sector macro selloff is the entry; KLAC is the highest-quality, highest-margin equipment business to buy on weakness',
+      leapStructure: 'Jan 2027 $730C — 12-month duration; advanced packaging inspection (CoWoS) is the upside option; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — process control revenue per leading-edge wafer; CoWoS inspection tool orders; China restriction impact; services (recurring) growth',
+      thesis: 'KLA is the highest-margin, most defensible equipment business in semis. Yield loss at 3nm is catastrophically expensive — KLA\'s tools are mandatory insurance, not discretionary spend. Inspection intensity per wafer grows faster than etch or deposition with every new node. The cleanest compounder in equipment.',
+    },
   },
 
   {
@@ -764,6 +884,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://www.tel.com/ir',
       reports: [{ label: 'Earnings Results', href: 'https://www.tel.com/ir/financials/earnings.html' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$13–$16 ADR — yen strength (USD/JPY below 140) compressing USD-reported earnings creates a currency-driven entry; TSMC N2 tool demand is yen-agnostic',
+      leapStructure: 'No liquid US options on TOELY ADR — long-only spot equity; size 0.75%, accumulate on USD/JPY strength-driven dips',
+      catalyst: 'Next quarterly earnings (JPY) — TSMC N2 single-wafer thermal CVD order backlog; book-to-bill ratio; China revenue restriction impact vs. TSMC offset',
+      thesis: 'Tokyo Electron has dominant share in single-wafer thermal CVD and coater/developer for EUV lithography tracks — two tools that are mandatory at every leading-edge node globally. The weak yen provides a structural cost tailwind. TSMC N2 ramp creates a multi-quarter order visibility window.',
     },
   },
 
@@ -803,6 +929,12 @@ export const COMPANIES = [
       base: 'https://investors.vertiv.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investors.vertiv.com/financials/quarterly-results/default.aspx' }],
     },
+    tacticalEntry: {
+      idealEntry: '$88–$100 — CDU supply chain delay headline or Columbus factory ramp concern creating a sentiment gap; demand is not the risk, manufacturing throughput is',
+      leapStructure: 'Jan 2027 $105C — 12-month duration; Columbus factory Phase 2 commissioning is the upside unlock; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — liquid cooling (DLC) segment revenue growth; CDU backlog vs. capacity; Columbus factory utilization ramp timeline',
+      thesis: 'Vertiv is the mandatory thermal infrastructure for every AI rack above 40kW density — and Blackwell racks are 100kW+. The NVL72 co-design lock creates multi-year sole-source exposure. Backlog exceeds $10B. The question is how fast manufacturing can scale, not whether demand will be there.',
+    },
   },
 
   {
@@ -839,6 +971,12 @@ export const COMPANIES = [
       base: 'https://www.gevernova.com/investors',
       reports: [{ label: 'Financial Results', href: 'https://www.gevernova.com/investors/financial-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$350–$380 — any wind segment earnings noise masking HL-class turbine Power backlog strength; or broad industrial selloff creating a sector-wide entry',
+      leapStructure: 'Jan 2027 $400C — 12-month duration; Greenville factory expansion + hyperscaler behind-the-meter contracts are the catalysts; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — Power segment revenue vs. $30B+ backlog; HL-class turbine order additions from hyperscalers; Greenville capacity expansion timeline',
+      thesis: 'GEV owns the gas turbine that hyperscalers are ordering for on-site power because grid interconnect queues are 5-7 years. The Power segment backlog extends to 2028. This is a multi-year, contracted revenue story with industrial manufacturing economics — not a volatile tech multiple.',
+    },
   },
 
   {
@@ -873,6 +1011,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://www.microsoft.com/en-us/investor',
       reports: [{ label: 'Earnings Releases', href: 'https://www.microsoft.com/en-us/investor/earnings/default.aspx' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$390–$415 — OpenAI competitive concern headline or Azure growth deceleration fear creating entry; core position should be held through volatility',
+      leapStructure: 'Jan 2027 $430C or Jan 2028 $460C — 12-24 month duration; Copilot enterprise monetization is the delta driver; size 2%, delta 0.55+',
+      catalyst: 'Next quarterly earnings — Azure AI revenue growth rate vs. 42% guide; Copilot paid seat additions; GitHub Copilot ARR; capital expenditure vs. return on AI investment',
+      thesis: 'Microsoft is the AI distribution layer for enterprise — Azure OpenAI is the default on-ramp and Copilot is monetizing the 400M+ seat installed base. The moat compounds with every enterprise AI deployment. This is a core, long-duration position in the AI infrastructure stack.',
     },
   },
 
@@ -910,6 +1054,12 @@ export const COMPANIES = [
       base: 'https://abc.xyz/investor',
       reports: [{ label: 'Earnings Releases', href: 'https://abc.xyz/investor/other/earnings-materials/' }],
     },
+    tacticalEntry: {
+      idealEntry: '$160–$175 — antitrust headline or Search AI Overview monetization concern creating fear-based entry; GCP AI revenue trajectory is the real thesis',
+      leapStructure: 'Jan 2027 $185C — 12-month duration; GCP AI market share inflection + TPU v6 cost advantage are the re-rate catalysts; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — Google Cloud revenue vs. 35% guide; TPU v6 internal compute cost savings; Search ad revenue sustainability with AI Overviews; DOJ remedy update',
+      thesis: 'Alphabet is the most vertically integrated hyperscaler — it designs TPUs, runs GCP, and operates Search simultaneously. The TPU advantage in cost-per-FLOP means GOOGL is least exposed to NVIDIA supply constraints. GCP AI acceleration is the underappreciated catalyst at current valuations.',
+    },
   },
 
   {
@@ -945,6 +1095,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://ir.aboutamazon.com',
       reports: [{ label: 'Quarterly Results', href: 'https://ir.aboutamazon.com/quarterly-results' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$195–$210 — retail margin concern or AWS growth rate noise creating entry; AWS AI acceleration is structurally intact and decoupled from retail volatility',
+      leapStructure: 'Jan 2027 $220C or Jan 2028 $240C — 18-24 month duration; AWS AI capacity build-out and Trainium2 margin improvement are catalysts; size 2%, delta 0.60',
+      catalyst: 'Next quarterly earnings — AWS revenue vs. 25%+ guide; Trainium2 compute utilization reducing GPU COGS; Bedrock enterprise adoption; retail AI efficiency gains',
+      thesis: 'AWS is the largest AI cloud platform on earth and Trainium2 is reducing the marginal cost of training compute — the margin expansion story is just beginning. Amazon\'s retail AI efficiency gains provide a second lever. A core megacap AI infrastructure position.',
     },
   },
 
@@ -982,6 +1138,12 @@ export const COMPANIES = [
       base: 'https://investor.fb.com',
       reports: [{ label: 'Quarterly Earnings', href: 'https://investor.fb.com/investor-news/press-release-details/2025/default.aspx' }],
     },
+    tacticalEntry: {
+      idealEntry: '$560–$590 — Reality Labs quarterly loss headline or EU AI regulation concern creating entry; ad revenue and MTIA efficiency gains are the structural story',
+      leapStructure: 'Jan 2027 $620C — 12-month duration; MTIA 2 deployment reducing AI inference costs 40% is the margin expansion driver; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — advertising revenue growth vs. AI recommendation improvements; MTIA 2 inference cost reduction; Reality Labs operating loss trajectory; Llama enterprise adoption',
+      thesis: 'Meta\'s $68B capex program is the most aggressive AI infrastructure build in its history and the returns are already visible in ad pricing and engagement metrics. MTIA custom silicon is reducing inference costs — this compound efficiency will drive margin expansion through 2027. Llama open-source moat is free enterprise distribution.',
+    },
   },
 
   {
@@ -1016,6 +1178,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investors.palantir.com',
       reports: [{ label: 'Quarterly Earnings', href: 'https://investors.palantir.com/news-details/2025/default.aspx' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$72–$82 — any AIP growth rate deceleration concern or government budget continuing resolution creating a pullback; Rule of 40 > 65 is the hold signal',
+      leapStructure: 'Jan 2027 $90C — 12-month duration; AIP enterprise deal count acceleration is the primary catalyst; size 1%, delta 0.50 (premium valuation warrants smaller size)',
+      catalyst: 'Next quarterly earnings — US commercial revenue vs. 40% growth guide; AIP active enterprise deal count; bootcamp-to-contract conversion rate; Rule of 40 score',
+      thesis: 'Palantir has the most defensible government AI moat in the US market — classified contracts cannot be replicated by any commercial competitor. AIP bootcamp velocity is extraordinary and the Rule of 40 at 68 proves the business model is inflecting. Valuation is elevated but justified by the growth rate and moat quality.',
     },
   },
 
@@ -1052,6 +1220,12 @@ export const COMPANIES = [
       base: 'https://investor.oracle.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investor.oracle.com/investor-news/press-releases' }],
     },
+    tacticalEntry: {
+      idealEntry: '$145–$160 — database migration competition concern or OCI GPU capacity constraint headline creating entry; backlog sold-out through 2027 is the anchor',
+      leapStructure: 'Jan 2027 $170C — 12-month duration; OCI GPU cluster capacity expansion and Autonomous Database ARR growth are the catalysts; size 1%, delta 0.55',
+      catalyst: 'June 10 FY2026 Q4 earnings — OCI revenue vs. $25B guide; GPU cluster booking pipeline; Autonomous Database cloud migration customer count; MSFT/GOOGL/AMZN interconnect revenue',
+      thesis: 'Oracle executed a cloud pivot that most investors missed until it was already priced. OCI GPU clusters are sold out through 2027 — demand exceeds capacity. The database moat provides the sticky enterprise base while OCI becomes a credible third hyperscaler alternative.',
+    },
   },
 
   {
@@ -1086,6 +1260,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investors.snowflake.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investors.snowflake.com/news-releases' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$155–$175 — NRR deceleration or Databricks competitive concern creating a pullback; Cortex AI query growth acceleration is the re-rate signal to watch',
+      leapStructure: 'Jan 2027 $190C — 12-month duration; Cortex AI consumption ramp above bull-case is the upside catalyst; size 0.75%, delta 0.45 (consumption model uncertainty warrants smaller size)',
+      catalyst: 'Next quarterly earnings — product revenue vs. 25% growth guide; Cortex AI managed LLM query growth; NRR trend vs. 126% baseline; operating margin path to profitability',
+      thesis: 'Snowflake is the neutral data gravity platform for enterprise AI — models consume data from Snowflake without data leaving the governance perimeter. Every new AI initiative compounds the data stored and queried. The Cortex AI managed LLM API is the most underappreciated monetization layer.',
     },
   },
 
@@ -1125,6 +1305,12 @@ export const COMPANIES = [
       base: 'https://www.enbridge.com/investment-center',
       reports: [{ label: 'Quarterly Results', href: 'https://www.enbridge.com/investment-center/financial-information/quarterly-reports' }],
     },
+    tacticalEntry: {
+      idealEntry: '$42–$46 CAD ($30–$34 USD) — interest rate concern or USD/CAD move creating entry; 6.5%+ dividend yield provides significant income cushion while waiting for re-rate',
+      leapStructure: 'No meaningful US LEAPs on ENB — long-only equity for dividend yield and capital appreciation; size 1.5% as an income + AI energy infrastructure position',
+      catalyst: 'Next quarterly earnings — DCF per share vs. guidance; East Ohio Gas integration synergy update; regulated return asset base growth; AI data center gas demand visibility',
+      thesis: 'Enbridge moves 30% of North American crude oil and 20% of natural gas — every AI data center that burns gas flows through ENB infrastructure. The 6.5% dividend yield is the income floor. Regulated return rate base growth provides a durable, inflation-linked return profile.',
+    },
   },
 
   {
@@ -1159,6 +1345,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://ir.energytransfer.com',
       reports: [{ label: 'Quarterly Results', href: 'https://ir.energytransfer.com/financial-information/quarterly-results' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$16–$19 unit price — commodity price concern or WTI below $60 creating broad MLP weakness; 7.5%+ distribution yield is the income floor',
+      leapStructure: 'No liquid LEAPS on ET — long-only MLP units; size 1% as a yield + Permian AI gas exposure play; hold for distribution + unit appreciation',
+      catalyst: 'Next quarterly earnings — Permian gathered volumes growth rate; natural gas pipeline AI data center feedgas volumes; LNG export project FID update; distribution coverage ratio',
+      thesis: 'Energy Transfer connects Permian gas production to the data center power plants that hyperscalers are building. The 7.5%+ distribution yield provides income while AI power demand builds. Leverage is the primary risk — monitor 4.5x debt/EBITDA carefully.',
     },
   },
 
@@ -1195,6 +1387,12 @@ export const COMPANIES = [
       base: 'https://www.enterpriseproducts.com/investor-relations',
       reports: [{ label: 'Quarterly Results', href: 'https://www.enterpriseproducts.com/investor-relations/financial-reports' }],
     },
+    tacticalEntry: {
+      idealEntry: '$28–$31 unit price — NGL pricing weakness or interest rate concern creating MLP sector dip; 7%+ distribution yield and 26-year growth streak are the anchor',
+      leapStructure: 'No liquid LEAPS on EPD — long-only MLP units; size 1.5% as the highest-quality midstream income position; compound the distribution',
+      catalyst: 'Next quarterly earnings — DCF per unit vs. $8B+ guide; Mont Belvieu fractionation utilization; new Train 13 fractionator commissioning; LNG feedgas volume growth',
+      thesis: 'EPD is the A-rated, 26-year distribution growth midstream franchise — the safest yield in the ENFR basket. Mont Belvieu fractionation is fully subscribed through 2028. AI power demand structurally lifts long-term gas volumes through EPD\'s integrated value chain. Best risk-adjusted income in midstream.',
+    },
   },
 
   {
@@ -1229,6 +1427,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investor.williams.com',
       reports: [{ label: 'Quarterly Earnings', href: 'https://investor.williams.com/financial-information/quarterly-results/default.aspx' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$50–$56 — FERC permitting delay headline or rate case uncertainty creating entry; Transco corridor AI data center demand signal is the re-rate thesis',
+      leapStructure: 'Jan 2027 $58C — 12-month duration; Southeast Supply Enhancement commissioning + AI corridor volume data are the catalysts; size 1%, delta 0.55',
+      catalyst: 'Next quarterly earnings — Transco AI data center corridor volume growth (Mid-Atlantic segment); Southeast Supply Enhancement on-schedule update; FERC rate case settlement',
+      thesis: 'Williams\' Transco is the gas artery for the most AI-dense data center corridor in the world — Northern Virginia and the Mid-Atlantic. Every Bcf/d of data center gas demand is tariff-regulated return. The AI power demand tailwind is visible in volumes and not yet priced into the multiple.',
     },
   },
 
@@ -1266,6 +1470,12 @@ export const COMPANIES = [
       base: 'https://www.targaresources.com/investors',
       reports: [{ label: 'Quarterly Earnings', href: 'https://www.targaresources.com/investors/financial-information/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$170–$188 — Permian gas flaring restriction concern or NGL fractionation bottleneck news creating entry; Delaware Basin volume growth is the bull case anchor',
+      leapStructure: 'Jan 2027 $195C — 12-month duration; GCX Phase 2 full utilization + Delaware Basin acreage additions are the volume catalysts; size 1%, delta 0.55',
+      catalyst: 'Next quarterly earnings — Delaware Basin gathered volume growth rate; Grand Prix NGL pipeline throughput vs. capacity; adjusted EBITDA vs. raised guide; capital return program update',
+      thesis: 'Targa sits at the upstream end of the AI gas supply chain — Permian gas and NGLs gather through TRGP before flowing to the turbines and LNG export terminals. Delaware Basin dedications compound volumes without requiring new producer rigs. The fee-based model provides commodity price insulation.',
+    },
   },
 
   {
@@ -1301,6 +1511,12 @@ export const COMPANIES = [
       base: 'https://investors.oneok.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investors.oneok.com/financial-information/quarterly-earnings' }],
     },
+    tacticalEntry: {
+      idealEntry: '$96–$106 — Magellan integration execution concern or Williston producer activity softness creating entry; Magellan synergy upside is the re-rate catalyst',
+      leapStructure: 'Jan 2027 $110C — 12-month duration; Magellan $200M synergy realization + LNG feedgas volume growth are the catalysts; size 1%, delta 0.55',
+      catalyst: 'Next quarterly earnings — Magellan integration synergy realization vs. $200M plan; Williston Basin NGL volumes; Gulf Coast LNG feedgas pipeline revenue; net income guidance vs. raised midpoint',
+      thesis: 'ONEOK\'s Magellan acquisition created the most diversified midstream C-corp: Rocky Mountain NGL, refined products, and Gulf Coast LNG exposure. Synergies are tracking above plan. LNG export feedgas volumes are a new revenue stream from the same infrastructure. Integration risk is the primary near-term concern.',
+    },
   },
 
   {
@@ -1335,6 +1551,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://ir.kindermorgan.com',
       reports: [{ label: 'Earnings Releases', href: 'https://ir.kindermorgan.com/financial-information/quarterly-earnings' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$20–$23 — interest rate spike creating dividend yield expansion entry; 5.5%+ dividend yield provides income cushion; AI data center gas demand is a gradual volume tailwind',
+      leapStructure: 'No liquid LEAPS on KMI — long-only equity; size 1% as the most conservative ENFR income + AI gas exposure position; monitor debt refinancing risk',
+      catalyst: 'Next quarterly earnings — Texas Intrastate and EPNG AI data center gas volume growth; CO2 segment decline rate; DCF per share vs. guidance; debt maturity schedule and refinancing rates',
+      thesis: 'Kinder Morgan operates 83,000 miles of US natural gas pipeline — AI power demand is an incremental volume tailwind across every segment. The 5.5% dividend is the return floor. Capital return focus over growth investment maximizes near-term shareholder value from the existing network.',
     },
   },
   // ─────────────────────────────────────────────────────────────────────────
@@ -1376,6 +1598,12 @@ export const COMPANIES = [
       base: 'https://www.coherent.com/investors',
       reports: [{ label: 'Quarterly Earnings', href: 'https://www.coherent.com/investors/financial-information' }],
     },
+    tacticalEntry: {
+      idealEntry: '$62–$72 — CPO transition fear or InP substrate yield noise creating entry; 800G demand is the near-term anchor, 1.6T is the re-rate catalyst',
+      leapStructure: 'Jan 2027 $80C — 12-month duration; 1.6T transceiver production qualification at NVIDIA and hyperscalers is the primary catalyst; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — datacom revenue vs. +50% YoY guide; 800G backlog extension into 2027; 1.6T transceiver qualification timeline; InP substrate yield improvement',
+      thesis: 'Coherent is the dominant transceiver supplier for AI cluster interconnect — every NVLink and InfiniBand optical link in a Blackwell rack is a COHR product. The 800G cycle is the most compressed in optical history. The 1.6T transition is the next ASP step-function. InP manufacturing moat takes a decade to replicate.',
+    },
   },
 
   {
@@ -1411,6 +1639,12 @@ export const COMPANIES = [
     ir: {
       base: 'https://investor.lumentum.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investor.lumentum.com/financial-information/quarterly-results' }],
+    },
+    tacticalEntry: {
+      idealEntry: '$72–$82 — Apple 3D sensing concern or Chinese ROADM pricing pressure creating entry; datacom laser chip demand is the AI-driven thesis decoupled from Apple risk',
+      leapStructure: 'Jan 2027 $90C — 12-month duration; 800G/1.6T laser chip supply tightness is the primary catalyst; size 1%, delta 0.50',
+      catalyst: 'Next quarterly earnings — datacom laser chip revenue vs. +60% YoY guide; ROADM telecom recovery trajectory; 3D sensing Apple iPhone cycle update; InP capacity expansion timeline',
+      thesis: 'Lumentum is the upstream laser chip supplier to the AI optical interconnect stack — it sits one level above Coherent and Fabrinet in the value chain. 800G transceiver demand from every major OEM flows through LITE\'s InP epitaxy capacity. The 3D sensing business provides an Apple-correlated floor.',
     },
   },
 
@@ -1448,6 +1682,12 @@ export const COMPANIES = [
       base: 'https://investor.fabrinet.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investor.fabrinet.com/financial-information/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$220–$245 — Thailand risk headline or customer concentration concern creating entry; the assembly moat is as defensible as any fab; demand for 800G is the anchor',
+      leapStructure: 'Jan 2027 $260C — 12-month duration; revenue guidance above $820-840M confirms continued 800G ramp; size 1.5%, delta 0.55',
+      catalyst: 'Next quarterly earnings — revenue vs. $820-840M guide; datacom % of total revenue (tracking 72%+); Chonburi Phase 2 capacity utilization; new customer announcements',
+      thesis: 'Fabrinet is the TSMC of optical assembly — a manufacturing moat built on sub-micron precision that takes a decade to replicate. Every 800G transceiver surge flows into FN\'s Chonburi production lines. EMS model means low capex intensity and ROIC above 25%. The AI cluster interconnect build-out is a multi-year demand ceiling.',
+    },
   },
 
   {
@@ -1483,6 +1723,12 @@ export const COMPANIES = [
       base: 'https://investor.viavisolutions.com',
       reports: [{ label: 'Quarterly Results', href: 'https://investor.viavisolutions.com/financial-information/quarterly-results' }],
     },
+    tacticalEntry: {
+      idealEntry: '$10–$13 — telecom carrier capex pause concern or OSP pigment program timing noise creating entry; hyperscaler lab test spending is the AI-correlated revenue stream',
+      leapStructure: 'No liquid LEAPS on VIAV — long-only equity; size 0.5% as a speculative optical infrastructure position; smallest allocation in the photonics basket',
+      catalyst: 'Next quarterly earnings — NSE datacenter lab test revenue growth; OSP segment in-line; carrier field test recovery; operating margin expansion trajectory',
+      thesis: 'Viavi validates and monitors the optical networks that AI data centers are deploying at record speed. As 800G and 1.6T networks proliferate, the complexity and value of test and measurement instrumentation rises proportionally. The OSP anti-counterfeiting business is a stable, high-margin cash flow floor.',
+    },
   },
 
 ];
@@ -1493,7 +1739,7 @@ export const getCompany = (id) => COMPANIES.find((c) => c.id === id);
 // Approximate Q2/Q3 2026 report dates based on historical filing cadence.
 export const NEXT_EARNINGS = {
   // Logic
-  nvda:  '2026-05-28', // NVIDIA FY2027 Q1
+  nvda:  '2026-05-20', // NVIDIA FY2027 Q1
   tsm:   '2026-07-17', // TSMC Q2 2026
   avgo:  '2026-06-05', // Broadcom FY2026 Q2
   intc:  '2026-07-24', // Intel Q2 2026
