@@ -14,7 +14,7 @@ export default function Sidebar({ activeId, onSelect, onHome }) {
         className="mb-10 block text-left"
       >
         <div className="font-display text-lg leading-tight">
-          Semi&nbsp;Stack Hub
+          Semiconductor Earnings Discussion
         </div>
         <div className="label mt-1">2026 · AI Buildout</div>
       </button>
