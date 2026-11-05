@@ -1,12 +1,20 @@
 import { useState } from 'react';
 import { getCompany, NEXT_EARNINGS } from '../data/companies.js';
 import { getFounderProfile } from '../data/founderProfiles.js';
+import { getCreditProfile } from '../data/creditProfiles.js';
 import LiveTicker from './LiveTicker.jsx';
 import NexusGraph from './NexusGraph.jsx';
 import FounderCard from './FounderCard.jsx';
+import CreditGauge from './CreditGauge.jsx';
+import CreditCard from './CreditCard.jsx';
+
+// Date-only strings parse as UTC, which shows the previous day in US time zones.
+function parseLocalDate(dateStr) {
+  return new Date(`${dateStr}T00:00:00`);
+}
 
 function daysUntil(dateStr) {
-  const target = new Date(dateStr);
+  const target = parseLocalDate(dateStr);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   target.setHours(0, 0, 0, 0);
@@ -18,7 +26,7 @@ function EarningsDate({ id }) {
   if (!dateStr) return <span className="text-paper-muted dark:text-ink-muted">—</span>;
 
   const days = daysUntil(dateStr);
-  const formatted = new Date(dateStr).toLocaleDateString('en-US', {
+  const formatted = parseLocalDate(dateStr).toLocaleDateString('en-US', {
     month: 'short', day: 'numeric', year: 'numeric',
   });
 
@@ -68,6 +76,7 @@ export default function CompanyCard({ company, onNavigate }) {
   } = company;
 
   const founderProfile = getFounderProfile(id);
+  const creditProfile = getCreditProfile(id);
 
   return (
     <article className="mx-auto w-full max-w-3xl px-6 py-12 md:px-10 md:py-16">
@@ -109,6 +118,9 @@ export default function CompanyCard({ company, onNavigate }) {
           <Dd><EarningsDate id={id} /></Dd>
         </Dl>
       </Section>
+
+      {/* Credit Conditions */}
+      <div className="mb-12"><CreditGauge /></div>
 
       {/* Earnings */}
       {earnings && <EarningsSection earnings={earnings} />}
@@ -162,6 +174,9 @@ export default function CompanyCard({ company, onNavigate }) {
           })}
         </ul>
       </Section>
+
+      {/* Credit Exposure (conditional) */}
+      {creditProfile && <CreditCard profile={creditProfile} />}
 
       {/* Founder DNA (conditional) */}
       {founderProfile && <FounderCard profile={founderProfile} />}

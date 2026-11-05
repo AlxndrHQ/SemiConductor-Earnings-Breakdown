@@ -1,5 +1,6 @@
 import React from 'react';
 import StackFlow from './StackFlow.jsx';
+import CreditGauge from './CreditGauge.jsx';
 import { COMPANIES } from '../data/companies.js';
 
 export default function Home({ onSelect }) {
@@ -18,6 +19,10 @@ export default function Home({ onSelect }) {
           HBM.
         </p>
       </header>
+
+      <section className="mb-14">
+        <CreditGauge />
+      </section>
 
       <section className="mb-14">
         <StackFlow />

@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react';
 import mermaid from 'mermaid';
 import { COMPANIES } from '../data/companies.js';
+import { CREDIT_NODES, getCreditProfile } from '../data/creditProfiles.js';
 
 /**
  * Build a Mermaid flowchart definition for a single company.
  * - Center node (gold border) = this company
  * - Outbound (warm brown) = companies this one depends on
  * - Inbound (muted gray) = companies that depend on this one
+ * - Credit (dashed red) = financing sources this company is exposed to
  */
 function buildGraph(company) {
   const { id, name, ticker, nexus = [] } = company;
@@ -41,6 +43,12 @@ function buildGraph(company) {
     if (link) edges.push({ from: c.id, to: id, label: link.label.slice(0, 28) });
   });
 
+  (getCreditProfile(id)?.links ?? []).forEach(({ node, label }) => {
+    const nid = `credit_${node}`;
+    if (!nodeMap.has(nid)) nodeMap.set(nid, { label: CREDIT_NODES[node], cls: 'credit' });
+    edges.push({ from: nid, to: id, label: label.slice(0, 28) });
+  });
+
   let def = 'flowchart LR\n';
 
   nodeMap.forEach(({ label, cls }, nid) => {
@@ -54,6 +62,7 @@ function buildGraph(company) {
   def += `  classDef center   fill:transparent,stroke:#c9a875,stroke-width:2px,color:inherit;\n`;
   def += `  classDef outbound fill:transparent,stroke:#8a5a2b,stroke-width:1px,color:inherit;\n`;
   def += `  classDef inbound  fill:transparent,stroke:#6b6960,stroke-width:1px,color:inherit;\n`;
+  def += `  classDef credit   fill:transparent,stroke:#dc2626,stroke-width:1px,stroke-dasharray:4 3,color:inherit;\n`;
 
   return def;
 }
@@ -108,6 +117,9 @@ export default function NexusGraph({ company }) {
         Gold&nbsp;=&nbsp;{company?.name}&nbsp;&nbsp;·&nbsp;&nbsp;
         Warm&nbsp;=&nbsp;Dependencies&nbsp;&nbsp;·&nbsp;&nbsp;
         Gray&nbsp;=&nbsp;Dependents
+        {getCreditProfile(company?.id)?.links?.length > 0 && (
+          <>&nbsp;&nbsp;·&nbsp;&nbsp;Dashed&nbsp;Red&nbsp;=&nbsp;Credit</>
+        )}
       </p>
       <div ref={ref} className="overflow-x-auto" />
     </div>

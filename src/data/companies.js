@@ -1739,7 +1739,7 @@ export const getCompany = (id) => COMPANIES.find((c) => c.id === id);
 // Approximate Q2/Q3 2026 report dates based on historical filing cadence.
 export const NEXT_EARNINGS = {
   // Logic
-  nvda:  '2026-05-20', // NVIDIA FY2027 Q1
+  nvda:  '2026-11-17', // NVIDIA FY2027 Q3 (confirmed)
   tsm:   '2026-07-17', // TSMC Q2 2026
   avgo:  '2026-06-05', // Broadcom FY2026 Q2
   intc:  '2026-07-24', // Intel Q2 2026
